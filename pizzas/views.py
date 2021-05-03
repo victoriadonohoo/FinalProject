@@ -26,6 +26,7 @@ def comment(request, pizza_id):
         form = CommentForm()
     else:
         form = CommentForm(data=request.POST)
+        
         if form.is_valid():
             comment = form.save(commit=False)
             comment.pizza = pizza
